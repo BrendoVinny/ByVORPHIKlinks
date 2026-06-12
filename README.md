@@ -1,2 +1,579 @@
 # ByVORPHIKlinks
 Links para as páginas de intretenimento da VORPHIK by Vinny Garcia 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Vinny Garcia • Multiverso Vorphik</title>
+
+  <!-- GOOGLE FONTS: Cinzel Decorative no peso 900 (Ultra Bold/Black) para máximo impacto -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Página oficial de links - Vinny Garcia • Multiverso Vorphik">
+  <meta property="og:title" content="Vinny Garcia • Multiverso Vorphik">
+  <meta property="og:description" content="Acesse todos os links oficiais, redes sociais e conteúdos exclusivos.">
+  <meta property="og:image" content="https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/4c0e64d4-c1ab-49e8-9ea6-34ffcf02746c.png">
+  <meta property="og:url" content="https://seusite.com">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/f0b14ba2-0ad1-4741-9a82-57f8e8190c9c.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050505;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4AF37;
+      border-radius: 10px;
+    }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      background-color: #050505;
+      min-height: 100vh;
+      color: #ffffff;
+      overflow-x: hidden; 
+    }
+
+    /* Tipografia Vorphik Ultra Bold */
+    .landing-link-card, .link-card, .btn-enter-18, .gate-text {
+      font-family: 'Cinzel Decorative', serif;
+      font-weight: 900;
+    }
+
+    /* ========== CAPA PÚBLICA ========== */
+    .landing-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      overflow-y: auto;
+      transition: opacity 0.6s ease;
+    }
+
+    .landing-overlay::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/6b97162e-00f5-4ab0-be56-4f588077c7d8.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      filter: brightness(0.4) blur(1px);
+      z-index: -2;
+    }
+
+    .landing-overlay::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      animation: thunderFlash 6s infinite ease;
+    }
+
+    .landing-logo {
+      width: 340px; 
+      max-width: 90%;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 4px 15px rgba(212,175,55,0.8));
+    }
+
+    .landing-links, .link-buttons {
+      width: 100%;
+      max-width: 450px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin: auto 0 1.5rem; 
+    }
+
+    .bio-detalhada {
+      color: #DDDDDD;
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      z-index: 10;
+    }
+    .bio-detalhada span {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.15);
+      padding: 0.3rem 0.8rem;
+      border-radius: 30px;
+      margin: 0.2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    /* ========== ESTILO DOS BOTÕES DOURADOS ========== */
+    .landing-link-card, .link-card {
+      background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+      border: none;
+      color: #000000;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 65px;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .landing-link-card *, .link-card * {
+      pointer-events: none;
+    }
+
+    .landing-link-card span, .link-card span {
+      position: relative;
+      z-index: 5;
+      letter-spacing: 1px;
+    }
+
+    .landing-link-card img, .link-card img {
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      object-fit: contain;
+      filter: drop-shadow(3px 5px 8px rgba(0,0,0,0.6));
+      transition: transform 0.4s ease;
+      z-index: 10;
+    }
+
+    .landing-link-card:nth-child(odd) img, .link-card:nth-child(odd) img {
+      right: -25px;
+    }
+    .landing-link-card:nth-child(odd), .link-card:nth-child(odd) {
+      padding-right: 50px;
+      padding-left: 15px;
+    }
+
+    .landing-link-card:nth-child(even) img, .link-card:nth-child(even) img {
+      left: -25px;
+    }
+    .landing-link-card:nth-child(even), .link-card:nth-child(even) {
+      padding-left: 50px;
+      padding-right: 15px;
+    }
+
+    .landing-link-card:hover, .link-card:hover {
+      background: linear-gradient(135deg, #AA771C, #FBF5B7, #B38728, #FCF6BA, #BF953F);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(212,175,55,0.6);
+      color: #000;
+    }
+    .landing-link-card:nth-child(odd):hover img, .link-card:nth-child(odd):hover img {
+      transform: scale(1.15) rotate(8deg);
+    }
+    .landing-link-card:nth-child(even):hover img, .link-card:nth-child(even):hover img {
+      transform: scale(1.15) rotate(-8deg);
+    }
+
+    /* ========== BOTÃO COPIAR LINK ========== */
+    .copy-msg {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #CCCCCC;
+      background: rgba(0,0,0,0.5);
+      border: 1px solid #555;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.7rem 1.8rem;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-bottom: 2rem;
+      z-index: 10;
+    }
+
+    .copy-msg:hover {
+      border-color: #D4AF37;
+      color: #D4AF37;
+      background: rgba(0,0,0,0.7);
+    }
+
+    /* ========== TEXTOS E BOTÕES DE ENTRADA ========== */
+    .gate-container {
+      text-align: center;
+      width: 100%;
+      max-width: 450px;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      padding-top: 2.5rem;
+      margin-bottom: 1rem;
+      z-index: 10;
+    }
+
+    .gate-text {
+      color: #ffffff;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin-bottom: 2rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px; 
+    }
+
+    .gate-text img {
+      width: 115px; 
+      height: 115px;
+      object-fit: contain;
+      filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.6));
+    }
+
+    .btn-enter-18 {
+      background: linear-gradient(135deg, #4A148C, #2c0e5e); 
+      border: 2px solid #6A1B9A;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 1.2rem;
+      border-radius: 60px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(74, 20, 140, 0.5);
+    }
+
+    .btn-enter-18:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(106, 27, 154, 0.8);
+      background: linear-gradient(135deg, #6A1B9A, #4A148C);
+    }
+
+    /* ========== RODAPÉ ========== */
+    .landing-footer {
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      color: #999;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      justify-content: center;
+      gap: 10px; 
+      z-index: 10;
+    }
+    
+    .footer-logo-pequeno {
+      width: 120px; 
+      opacity: 0.8;
+    }
+
+    /* ========== PÁGINA INTERNA +18 ========== */
+    .main-content {
+      position: relative;
+      max-width: 550px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 2rem 1.5rem 3rem;
+      min-height: 100vh;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 1;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .main-content::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/6dfbd6fb-f932-4c4f-99bf-6ec40c8ff516.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      filter: brightness(0.4) blur(2px);
+      z-index: -2;
+    }
+
+    @keyframes thunderFlash {
+      0% { background-color: rgba(255, 255, 255, 0); }
+      8% { background-color: rgba(255, 240, 180, 0.6); }
+      12% { background-color: rgba(255, 255, 255, 0); }
+      20% { background-color: rgba(255, 240, 180, 0.3); }
+      22% { background-color: rgba(255, 255, 255, 0); }
+      100% { background-color: rgba(255, 255, 255, 0); }
+    }
+
+    .main-content::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      animation: thunderFlash 6s infinite ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Nova classe para a Imagem Principal limpa e sem círculos da área interna */
+    .hero-image {
+      width: 350px;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1.5rem;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 25px rgba(212,175,55,0.3));
+    }
+
+    .btn-back {
+      font-family: 'Inter', sans-serif;
+      background: rgba(212, 175, 55, 0.2);
+      border: 1px solid #D4AF37;
+      border-radius: 60px;
+      color: #D4AF37;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 0.8rem 1.8rem;
+      margin-top: 1.5rem;
+      cursor: pointer;
+      transition: 0.3s;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    .btn-back:hover {
+      background: #D4AF37;
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      font-size: 0.7rem;
+      color: #aaa;
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(212,175,55,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-logo {
+      width: 120px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CAPA PÚBLICA -->
+  <div id="landingOverlay" class="landing-overlay">
+    
+    <img src="https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/830fba17-a1de-44ba-ac5a-2e89b8c6bf89.png" alt="Vorphik Logo" class="landing-logo">
+
+    <div class="bio-detalhada">
+      <span>Modelo</span> <span>Designer</span> <span>Estilista</span> <span>Técnico</span>
+      <span>Inventor</span> <span>Artista Plástico</span> <span>Criador de Conteúdo</span>
+      <span>Acompanhante</span> <span>Massoterapeuta</span>
+    </div>
+
+    <div class="landing-links" id="publicLinksContainer"></div>
+
+    <button class="copy-msg" id="copyUrlBtnCapa">Copiar Link da Página</button>
+
+    <div class="gate-container">
+      <div class="gate-text">
+        CONTEÚDO EXCLUSIVO
+        <img src="https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/d72df5a9-53d0-4fec-9585-6bf6f5461a28.png" alt="+18">
+      </div>
+      
+      <button class="btn-enter-18" id="enterBtn">
+        <span>SOU MAIOR QUERO ENTRAR NESTE MULTIVERSO</span>
+      </button>
+    </div>
+
+    <!-- RODAPÉ ATUALIZADO (Capa) -->
+    <div class="landing-footer">
+      <img src="https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/f0b14ba2-0ad1-4741-9a82-57f8e8190c9c.png" class="footer-logo-pequeno" alt="Logo">
+      <span>©2026 - VORPHIK by Vinny Garcia - Todos os direitos reservados.</span>
+    </div>
+  </div>
+
+  <!-- PÁGINA INTERNA +18 -->
+  <div id="mainContent" class="main-content" style="display: none;">
+    <!-- IMAGEM DE DESTAQUE LIVRE E SEM CORTES -->
+    <img src="https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/4c0e64d4-c1ab-49e8-9ea6-34ffcf02746c.png" alt="Bem-vindo ao meu Multiverso Vorphik" class="hero-image">
+    
+    <div class="bio-detalhada">
+      <span>Modelo</span> <span>Designer</span> <span>Estilista</span> <span>Técnico</span>
+      <span>Inventor</span> <span>Artista Plástico</span> <span>Criador de Conteúdo</span>
+      <span>Acompanhante</span> <span>Massoterapeuta</span>
+    </div>
+
+    <div class="link-buttons" id="linksContainer"></div>
+
+    <button class="copy-msg" id="copyUrlBtnInterna">Copiar Link da Página</button>
+    <br>
+    <button class="btn-back" id="backBtn">Voltar para página pública</button>
+
+    <!-- RODAPÉ ATUALIZADO (Interna) -->
+    <footer>
+      <img src="https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/f0b14ba2-0ad1-4741-9a82-57f8e8190c9c.png" class="footer-logo" alt="Logo">
+      <span>©2026 - VORPHIK by Vinny Garcia - Todos os direitos reservados.</span>
+    </footer>
+  </div>
+
+  <script>
+    const linksPublicos = [
+      { texto: "Siga minha página oficial", url: "https://seusite.com", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/0cdbf2a1-e290-4a51-bc03-bf172ab4b965.png" },
+      { texto: "Curta minha página no Facebook", url: "https://www.facebook.com/share/1Aj4sNmwfg/", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/cdcbeb29-7400-4373-9935-c6b42a3b7ff3.png" },
+      { texto: "Me adicione no Facebook (Vinny)", url: "https://facebook.com/voramos", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/cdcbeb29-7400-4373-9935-c6b42a3b7ff3.png" },
+      { texto: "Veja meu novo reel no Instagram", url: "https://instagram.com/vorphik.by.vinny", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/2a9227ba-df88-4c6e-8aca-f43db394c76a.png" },
+      { texto: "Me siga no Instagram (pessoal)", url: "https://instagram.com/vinnygarciaramos", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/2a9227ba-df88-4c6e-8aca-f43db394c76a.png" },
+      { texto: "Participe das minhas threads", url: "https://threads.net/@vorphik", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/d01e86bc-2851-448f-8e59-5673534b7992.png" },
+      { texto: "Pra elogios e msg me chame no Telegram", url: "https://t.me/vorphik", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/a2e16708-de70-4a7d-97ab-4a39279d6c52.png" }
+    ];
+
+    const links18 = [
+      { titulo: "Privacy", url: "https://privacy.com.br/@vinnygarcia", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/f199cf9a-c505-4112-9157-a381da67d79d.png" },
+      { titulo: "OnlyFans", url: "https://onlyfans.com/vorphik", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/29b54f20-ae1f-40de-926f-07835c2e5c98.png" },
+      { titulo: "FatalFans", url: "https://fatalfans.com.br/vorphik", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/84517b53-a6b6-4994-a408-78cfba9d14f7.png" },
+      { titulo: "X (Twitter)", url: "https://x.com/vorphikbyvinny", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/3ac32b7d-84cc-412b-bc4d-fd27158eb09f.png" },
+      { titulo: "Stripchat", url: "https://stripchat.com/", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/8f39cd73-4520-4ff5-b9ae-94e85699cdb8.png" },
+      { titulo: "Cam4", url: "https://pt.cam4.com/BrendoGarcia", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/9d9117f9-eace-41cd-ba0b-f0439513a8a3.png" },
+      { titulo: "Fatal Model", url: "https://fatalmodel.com/acompanhante/520084/vinny-garcia", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/14d9ccd7-9a4a-4c15-9860-6839f130d9ef.png" },
+      { titulo: "Garoto com Local", url: "https://garotocomlocal.com.br/acompanhante-masculino/vinny-garcia", img: "https://i.supaimg.com/c6f00484-9196-4ec3-8bba-e2fce250fae0/7fcdbf52-3ad2-4dac-83e9-257ba67689c2.png" }
+    ];
+
+    function trackClick(nome) {
+      try {
+        let clicks = JSON.parse(localStorage.getItem('linkClicks') || '{}');
+        clicks[nome] = (clicks[nome] || 0) + 1;
+        localStorage.setItem('linkClicks', JSON.stringify(clicks));
+      } catch (e) {}
+    }
+
+    function createButton(linkData, className, isPublic = false) {
+      const a = document.createElement('a');
+      a.className = className;
+      a.href = linkData.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer nofollow';
+      
+      const img = document.createElement('img');
+      img.src = linkData.img;
+      img.alt = "";
+      img.loading = 'lazy';
+      
+      const span = document.createElement('span');
+      span.innerText = isPublic ? linkData.texto : linkData.titulo;
+      
+      a.appendChild(img);
+      a.appendChild(span);
+      a.addEventListener('click', () => trackClick(isPublic ? linkData.texto : linkData.titulo));
+      return a;
+    }
+
+    const publicContainer = document.getElementById('publicLinksContainer');
+    linksPublicos.forEach(link => {
+      publicContainer.appendChild(createButton(link, 'landing-link-card', true));
+    });
+
+    const container18 = document.getElementById('linksContainer');
+    links18.forEach(link => {
+      container18.appendChild(createButton(link, 'link-card', false));
+    });
+
+    document.querySelectorAll('.copy-msg').forEach(btn => {
+      btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          const original = btn.innerText;
+          btn.innerText = 'Link Copiado';
+          setTimeout(() => btn.innerText = original, 2000);
+        }).catch(() => alert('Copie o link manualmente.'));
+      });
+    });
+
+    const landingDiv = document.getElementById('landingOverlay');
+    const mainDiv = document.getElementById('mainContent');
+    const enterBtn = document.getElementById('enterBtn');
+    const backBtn = document.getElementById('backBtn');
+
+    try {
+      if (localStorage.getItem('ageConfirmed') === 'true') {
+        landingDiv.style.display = 'none';
+        mainDiv.style.display = 'block';
+      } else {
+        landingDiv.style.display = 'flex';
+        mainDiv.style.display = 'none';
+      }
+    } catch(e) {
+      landingDiv.style.display = 'flex';
+      mainDiv.style.display = 'none';
+    }
+
+    enterBtn.addEventListener('click', () => {
+      try { localStorage.setItem('ageConfirmed', 'true'); } catch(e) {}
+      landingDiv.style.opacity = '0';
+      setTimeout(() => {
+        landingDiv.style.display = 'none';
+        mainDiv.style.display = 'block';
+      }, 300);
+    });
+
+    backBtn.addEventListener('click', () => {
+      try { localStorage.removeItem('ageConfirmed'); } catch(e) {}
+      landingDiv.style.display = 'flex';
+      setTimeout(() => {
+        landingDiv.style.opacity = '1';
+        mainDiv.style.display = 'none';
+      }, 50);
+    });
+  </script>
+</body>
+</html>
